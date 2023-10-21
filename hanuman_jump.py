@@ -37,8 +37,8 @@ player=ImageTk.PhotoImage(file="IMAGES/player.png")
 def home():
     canvas.create_image(0,0,image=bg,anchor="nw")
     canvas.create_image(600,410,image=start,anchor="nw",tags="start")
-    canvas.create_image(600,510,image=help,anchor="nw",tags="help")
-    canvas.create_image(620,610,image=exit,anchor="nw",tags="exit")
+    canvas.create_image(590,500,image=help,anchor="nw",tags="help")
+    canvas.create_image(570,570,image=exit,anchor="nw",tags="exit")
 home()
 
 #________________KEY EVENTS_______________
