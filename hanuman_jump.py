@@ -86,6 +86,8 @@ def alllevels():
     canvas.create_text(725,625,text="LEVEL3",font=("Kavoon", 20, "bold"), fill="black",tags="level3")
     #___________BACK_HOME___________
     canvas.create_image(10,10,image=back,anchor="nw",tags="back")
+#____________________LEVEL-3___________________________
+
 #__________________KEY EVENTS______________________
 canvas.tag_bind("start","<Button-1>", start)
 canvas.tag_bind("exit","<Button-1>", exit)
