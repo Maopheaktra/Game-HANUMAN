@@ -32,9 +32,9 @@ player=ImageTk.PhotoImage(file="IMAGES/player.png")
 levels=ImageTk.PhotoImage(file="IMAGES/levels.png")
 back=ImageTk.PhotoImage(file="IMAGES/back.png")
 #___________HELP_INSTRUCTION________
-help_img=Image.open("IMAGES/instruction.png")
-help_img_size=help_img.resize((500,600))
-help=ImageTk.PhotoImage(help_img_size)
+instruction_img=Image.open("IMAGES/instruction.png")
+instruction_img_size=instruction_img.resize((500,600))
+instruct=ImageTk.PhotoImage(instruction_img_size)
 #______LEVELS________
 bg_levels=Image.open("IMAGES/levels.png")
 bg_levels_size=bg_levels.resize((WINDOW_WIDTH,WINDOW_HEIGHT))
@@ -68,8 +68,8 @@ def backlevel(event):
 #_______HEP_BTN__________
 def help(event):
     canvas.create_image(1, 0, image=levels_bg, anchor="nw")
-    canvas.create_image(380,100, image = help, anchor="nw")
-    canvas.create_image(25, 10, image=back, anchor="nw", tags="back_home")
+    canvas.create_image(400,150, image = instruct, anchor="nw")
+    canvas.create_image(25, 10, image=back, anchor="nw", tags="back")
 # _____________________LEVELS BUTTON______________________
 def alllevels():
     canvas.delete("all")
@@ -89,7 +89,7 @@ def alllevels():
 #__________________KEY EVENTS______________________
 canvas.tag_bind("start","<Button-1>", start)
 canvas.tag_bind("exit","<Button-1>", exit)
-canvas.tag_bind("help","<Button-1>",help)
+canvas.tag_bind("help","<Button-1>", help)
 canvas.tag_bind("back","<Button-1>", backlevel)
 home()
 #========================= DISPLAY WINDOW =================
