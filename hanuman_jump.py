@@ -73,7 +73,7 @@ def help(event):
 canvas.tag_bind=("start","<Button-1>",start)
 canvas.tag_bind=("help","<Button-1>",help)
 canvas.tag_bind=("exit","<Button-1>",exit)
-#========================= DISPLAY WINDOW =================
-canvas.pack(expand=True, fill="both")
-frame.pack(expand=True, fill="both")
+# #========================= DISPLAY WINDOW =================
+# canvas.pack(expand=True, fill="both")
+# frame.pack(expand=True, fill="both")
 window.mainloop()
