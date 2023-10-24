@@ -9,7 +9,7 @@ WINDOW_WIDTH=2000
 WINDOW_HEIGHT=800
 GRAVITY_FORCE = 9
 JUMP_FORCE = 30
-SPEED = 7
+SPEED = 9
 TIMED_LOOP = 10
 
 #============================ VARIABLES ============================
@@ -46,9 +46,7 @@ bg_l1_file_size=bg_l1_file.resize((WINDOW_WIDTH,WINDOW_HEIGHT))
 bg_l1=ImageTk.PhotoImage(bg_l1_file_size)
 bg_l1_label1=canvas.create_image(0,0,image=bg_l1, anchor="nw")
 bg_l1_label2=canvas.create_image(WINDOW_WIDTH,0,image=bg_l1, anchor="nw")
-# canvas.create_image(600,350,image=bg_l1)
-# canvas.create_image(1950,350,image=bg_l1)
-# canvas.create_image(3300,350,image=bg_l1)
+
 
 # ______________HOME PAGE___________
 # def home():
@@ -132,17 +130,25 @@ banana_id=canvas.create_image(1040,490,image = banana, anchor = "nw",tags="banan
 banana_id=canvas.create_image(1060, 490,image = banana, anchor = "nw",tags="banana")
 banana_id=canvas.create_image(1080, 490,image = banana, anchor = "nw",tags="banana")
 
-# banana_id=canvas.create_image(1080,650,image = banana, anchor = "nw",tags="banana")
-# banana_id=canvas.create_image(1100, 650,image = banana, anchor = "nw",tags="banana")
-# banana_id=canvas.create_image(1120, 650,image = banana, anchor = "nw",tags="banana")
-
 banana_id=canvas.create_image(1240,300,image = banana, anchor = "nw",tags="banana")
 banana_id=canvas.create_image(1260, 300,image = banana, anchor = "nw",tags="banana")
 banana_id=canvas.create_image(1280, 300,image = banana, anchor = "nw",tags="banana")
 
-banana_id=canvas.create_image(1440,360,image = banana, anchor = "nw",tags="banana")
-banana_id=canvas.create_image(1460, 360,image = banana, anchor = "nw",tags="banana")
-banana_id=canvas.create_image(1480, 360,image = banana, anchor = "nw",tags="banana")
+banana_id=canvas.create_image(1440,650,image = banana, anchor = "nw",tags="banana")
+banana_id=canvas.create_image(1470, 650,image = banana, anchor = "nw",tags="banana")
+banana_id=canvas.create_image(1500, 650,image = banana, anchor = "nw",tags="banana")
+
+banana_id=canvas.create_image(1440,640,image = banana, anchor = "nw",tags="banana")
+banana_id=canvas.create_image(1470, 640,image = banana, anchor = "nw",tags="banana")
+banana_id=canvas.create_image(1500, 640,image = banana, anchor = "nw",tags="banana")
+
+banana_id=canvas.create_image(1760,650,image = banana, anchor = "nw",tags="banana")
+banana_id=canvas.create_image(1790, 650,image = banana, anchor = "nw",tags="banana")
+banana_id=canvas.create_image(1820, 650,image = banana, anchor = "nw",tags="banana")
+
+banana_id=canvas.create_image(1760,640,image = banana, anchor = "nw",tags="banana")
+banana_id=canvas.create_image(1790, 640,image = banana, anchor = "nw",tags="banana")
+banana_id=canvas.create_image(1820, 640,image = banana, anchor = "nw",tags="banana")
 
 # banana_id=canvas.create_image(1400,360,image = banana, anchor = "nw",tags="banana")
 # banana_id=canvas.create_image(1420, 360,image = banana, anchor = "nw",tags="banana")
@@ -168,7 +174,6 @@ canvas.create_image(480, 280,image = stone1, anchor = "nw",tags="PLATFORM")
 canvas.create_image(850, 200,image = stone1, anchor = "nw",tags="PLATFORM")
 canvas.create_image(1000, 480,image = stone1, anchor = "nw",tags="PLATFORM")
 canvas.create_image(1200, 300,image = stone1, anchor = "nw",tags="PLATFORM")
-canvas.create_image(1400, 350,image = stone1, anchor = "nw",tags="PLATFORM")
 # _____________________Bird_____________________________
 bird1_file = Image.open("IMAGES/bird1.gif")
 bird1_size = bird1_file.resize((150, 100))
@@ -178,9 +183,9 @@ bird=canvas.create_image(640, 250,image = bird1, anchor = "nw",tags="PLATFORM")
 enemy_file = Image.open("IMAGES/enemy.png")
 enemy_size = enemy_file.resize((100, 80))
 enemy = ImageTk.PhotoImage(enemy_size)
-canvas.create_image(650, 605,image = enemy, anchor = "nw",tags="PLATFORM") 
-canvas.create_image(1200, 605,image = enemy, anchor = "nw",tags="PLATFORM") 
-canvas.create_image(1800, 605,image = enemy, anchor = "nw",tags="PLATFORM") 
+canvas.create_image(650, 605,image = enemy, anchor = "nw",tags="platform") 
+canvas.create_image(1200, 605,image = enemy, anchor = "nw",tags="platform") 
+canvas.create_image(1600, 605,image = enemy, anchor = "nw",tags="platform") 
 
 #___________________Player_________________________________
 player_file = Image.open("IMAGES/player.png")
@@ -198,6 +203,10 @@ score_size = score_file.resize((50,50))
 score = ImageTk.PhotoImage(score_size)
 
 
+apsora_file = Image.open("IMAGES/apsora_winner.png")
+apsora_size = apsora_file.resize((150, 150))
+apsora = ImageTk.PhotoImage(apsora_size)
+canvas.create_image(1880, 530,image = apsora, anchor = "nw",tags="PLATFORM") 
 # ------------- Functions ---------------------
 
 def check_movement(dx=0, dy=0, checkGround=False):
@@ -229,14 +238,6 @@ def start_move(event):
         if len(keyPressed) == 1:
             move()
 def eat_banana():
-    coord = canvas.coords(play_id)
-    bananas = canvas.find_withtag("banana")
-    overlap = canvas.find_overlapping(coord[0], coord[1], coord[0] + player.width(),coord[1] + player.height())
-    for bn in bananas:
-        if bn in overlap:
-            return bn
-    return 0
-def meet_bird():
     coord = canvas.coords(play_id)
     bananas = canvas.find_withtag("banana")
     overlap = canvas.find_overlapping(coord[0], coord[1], coord[0] + player.width(),coord[1] + player.height())
