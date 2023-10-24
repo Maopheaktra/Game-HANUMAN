@@ -3,6 +3,7 @@ import tkinter as tk
 from PIL import ImageTk, Image
 from tkinter import font
 #============================ CONSTANTS ============================
+
 WINDOW_WIDTH=1420
 WINDOW_HEIGHT=800
 GRAVITY_FORCE = 9
@@ -72,9 +73,6 @@ levels_bg=ImageTk.PhotoImage(choose_size)
 def home():
     canvas.delete("all")
     canvas.create_image(0,0,image=bg,anchor="nw")
-    canvas.create_image(600,410,image=start,anchor="nw",tags="start")
-    canvas.create_image(590,500,image=help,anchor="nw",tags="help")
-    canvas.create_image(570,590,image=exit,anchor="nw",tags="exit")
     #__________START_BTN_________
     canvas.create_image(650,410,image=levels,anchor="nw",tags="start")
     canvas.create_text(730,450,text="START",font=("Kavoon", 25, "bold"), fill="black",tags="start")
@@ -116,7 +114,6 @@ def alllevels():
     canvas.create_text(725,625,text="LEVEL3",font=("Kavoon", 20, "bold"), fill="black",tags="level3")
     #___________BACK_HOME___________
     canvas.create_image(10,10,image=back,anchor="nw",tags="back")
-#____________________LEVEL-3___________________________
 #________________LEVEL-3__________________
 def level3(event):
     canvas.delete("all")
