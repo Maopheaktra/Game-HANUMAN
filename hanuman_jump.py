@@ -68,6 +68,8 @@ grass_level3=ImageTk.PhotoImage(grasses_size)
 l3=Image.open("IMAGES/level-3.png")
 l3_size=l3.resize((WINDOW_WIDTH,WINDOW_HEIGHT))
 level_3=ImageTk.PhotoImage(l3_size)
+levels=ImageTk.PhotoImage(file="IMAGES/levels.png")
+back=ImageTk.PhotoImage(file="IMAGES/back.png")
 #___________HELP_INSTRUCTION________
 instruction_img=Image.open("IMAGES/instruction.png")
 instruction_img_size=instruction_img.resize((500,600))
@@ -416,6 +418,7 @@ gravity()
 window.bind("<Key>", start_move)
 window.bind("<KeyRelease>", stop_move)
 # #________________KEY EVENTS_______________
+#________________KEY EVENTS_______________
 canvas.tag_bind=("start","<Button-1>",start)
 canvas.tag_bind=("help","<Button-1>",help)
 canvas.tag_bind=("exit","<Button-1>",exit)
