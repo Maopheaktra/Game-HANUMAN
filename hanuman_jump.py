@@ -6,7 +6,7 @@ from pygame import mixer
 import time
 #============================ CONSTANTS ============================
 
-WINDOW_WIDTH=2000
+WINDOW_WIDTH=1740
 WINDOW_HEIGHT=800
 GRAVITY_FORCE = 9
 JUMP_FORCE = 30
