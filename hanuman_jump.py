@@ -26,7 +26,6 @@ window=tk.Tk()
 window.geometry(str(WINDOW_WIDTH)+ "x" + str(WINDOW_HEIGHT))
 window.attributes('-fullscreen',True)
 window.title("HANUMAN JUMP")
-window.attributes('-fullscreen',True)
 frame=tk.Frame(window,width=WINDOW_WIDTH,height=WINDOW_HEIGHT)
 canvas=tk.Canvas(frame,width=WINDOW_WIDTH,height=WINDOW_HEIGHT)
 frame.pack()
@@ -103,8 +102,8 @@ instruction_img=Image.open("IMAGES/instruction.png")
 instruction_img_size=instruction_img.resize((500,600))
 instruct=ImageTk.PhotoImage(instruction_img_size)
 #______LEVELS________
-bg_levels=Image.open("IMAGES/levels.png")
-bg_levels_size=bg_levels.resize((WINDOW_WIDTH,WINDOW_HEIGHT))
+bg_levels=Image.open("IMAGES/bg.png")
+bg_levels_size=bg_levels.resize((800,WINDOW_HEIGHT))
 background_levels=ImageTk.PhotoImage(bg_levels_size)
 #________ALL_LEVELS_bg__________
 choose=Image.open("IMAGES/bg.png")
@@ -150,8 +149,13 @@ def help(event):
     canvas.create_image(400,150, image = instruct, anchor="nw")
     canvas.create_image(25, 10, image=back, anchor="nw", tags="back")
 # _____________________LEVELS BUTTON______________________
+
+# test 
+
+
 def alllevels():
     canvas.delete("all")
+    global player_id
     canvas.create_image(0,0,image=levels_bg,anchor="nw")
     canvas.create_text(700,200,text="CHOOSE LEVELS",font=("Kavoon", 50, "bold"), fill="black",tags="levels")
     #_______________LEVEL-1_______________
@@ -166,23 +170,26 @@ def alllevels():
     #___________BACK_HOME___________
     canvas.create_image(10,10,image=back,anchor="nw",tags="back")
     #_______________LEVEL-1_______________
+
+
+
 def level1(event):
     canvas.delete("all")
     global player_id
     global bg_l1_label1,bg_l1_label2
     bg_l1_label1=canvas.create_image(0,0,image=bg_l1, anchor="nw")
     bg_l1_label2=canvas.create_image(WINDOW_WIDTH,0,image=bg_l1, anchor="nw")
-    canvas.create_image(0,700,image = road, anchor = "nw", tags="PLATFORM")
-    canvas.create_image(300,700,image = road, anchor = "nw", tags="PLATFORM")
-    canvas.create_image(600,700,image = road, anchor = "nw", tags="PLATFORM")
-    canvas.create_image(900,700,image = road, anchor = "nw", tags="PLATFORM")
-    canvas.create_image(1200,700,image = road, anchor = "nw",tags="PLATFORM")
-    canvas.create_image(1500,700,image = road, anchor = "nw",tags="PLATFORM")
-    canvas.create_image(1800,700,image = road, anchor = "nw",tags="PLATFORM")
-    canvas.create_image(180, 700,image = banana, anchor = "nw",tags="banana")
-    canvas.create_image(200, 700,image = banana, anchor = "nw",tags="banana")
-    canvas.create_image(220, 700,image = banana, anchor = "nw",tags="banana")
-    canvas.create_image(240, 700,image = banana, anchor = "nw",tags="banana")
+    canvas.create_image(0,670,image = road, anchor = "nw", tags="PLATFORM")
+    canvas.create_image(300,670,image = road, anchor = "nw", tags="PLATFORM")
+    canvas.create_image(600,670,image = road, anchor = "nw", tags="PLATFORM")
+    canvas.create_image(900,670,image = road, anchor = "nw", tags="PLATFORM")
+    canvas.create_image(1200,670,image = road, anchor = "nw",tags="PLATFORM")
+    canvas.create_image(1500,670,image = road, anchor = "nw",tags="PLATFORM")
+    canvas.create_image(1800,670,image = road, anchor = "nw",tags="PLATFORM")
+    canvas.create_image(180, 640,image = banana, anchor = "nw",tags="banana")
+    canvas.create_image(200, 640,image = banana, anchor = "nw",tags="banana")
+    canvas.create_image(220, 640,image = banana, anchor = "nw",tags="banana")
+    canvas.create_image(240, 640,image = banana, anchor = "nw",tags="banana")
 
     canvas.create_image(300, 440,image = banana, anchor = "nw",tags="banana")
     canvas.create_image(320, 440,image = banana, anchor = "nw",tags="banana")
@@ -191,15 +198,15 @@ def level1(event):
     canvas.create_image(550, 290,image = banana, anchor = "nw",tags="banana")
     canvas.create_image(570, 290,image = banana, anchor = "nw",tags="banana")
 
-    canvas.create_image(490, 700,image = banana, anchor = "nw",tags="banana")
-    canvas.create_image(530, 700,image = banana, anchor = "nw",tags="banana")
-    canvas.create_image(570, 700,image = banana, anchor = "nw",tags="banana")
+    canvas.create_image(490, 640,image = banana, anchor = "nw",tags="banana")
+    canvas.create_image(530, 640,image = banana, anchor = "nw",tags="banana")
+    canvas.create_image(570, 640,image = banana, anchor = "nw",tags="banana")
 
-    canvas.create_image(800,700,image = banana, anchor = "nw",tags="banana")
-    canvas.create_image(820,700,image = banana, anchor = "nw",tags="banana")
-    canvas.create_image(840, 700,image = banana, anchor = "nw",tags="banana")
-    canvas.create_image(860, 700,image = banana, anchor = "nw",tags="banana")
-    canvas.create_image(880, 700,image = banana, anchor = "nw",tags="banana")
+    canvas.create_image(800,640,image = banana, anchor = "nw",tags="banana")
+    canvas.create_image(820,640,image = banana, anchor = "nw",tags="banana")
+    canvas.create_image(840, 640,image = banana, anchor = "nw",tags="banana")
+    canvas.create_image(860, 640,image = banana, anchor = "nw",tags="banana")
+    canvas.create_image(880, 640,image = banana, anchor = "nw",tags="banana")
 
     canvas.create_image(700, 170,image = banana, anchor = "nw",tags="banana")
     canvas.create_image(730, 170,image = banana, anchor = "nw",tags="banana")
@@ -213,11 +220,11 @@ def level1(event):
     canvas.create_image(1110, 350,image = banana, anchor = "nw",tags="banana")
     canvas.create_image(1140, 350,image = banana, anchor = "nw",tags="banana")
 
-    canvas.create_image(800,700,image = banana, anchor = "nw",tags="banana")
-    canvas.create_image(820,700,image = banana, anchor = "nw",tags="banana")
-    canvas.create_image(840, 700,image = banana, anchor = "nw",tags="banana")
-    canvas.create_image(860, 700,image = banana, anchor = "nw",tags="banana")
-    canvas.create_image(880, 700,image = banana, anchor = "nw",tags="banana")
+    canvas.create_image(800,640,image = banana, anchor = "nw",tags="banana")
+    canvas.create_image(820,640,image = banana, anchor = "nw",tags="banana")
+    canvas.create_image(840, 640,image = banana, anchor = "nw",tags="banana")
+    canvas.create_image(860, 640,image = banana, anchor = "nw",tags="banana")
+    canvas.create_image(880, 640,image = banana, anchor = "nw",tags="banana")
 
     canvas.create_image(1040,490,image = banana, anchor = "nw",tags="banana")
     canvas.create_image(1060, 490,image = banana, anchor = "nw",tags="banana")
@@ -227,17 +234,17 @@ def level1(event):
     canvas.create_image(1260, 300,image = banana, anchor = "nw",tags="banana")
     canvas.create_image(1280, 300,image = banana, anchor = "nw",tags="banana")
 
-    canvas.create_image(1440,700,image = banana, anchor = "nw",tags="banana")
-    canvas.create_image(1470, 700,image = banana, anchor = "nw",tags="banana")
-    canvas.create_image(1500, 700,image = banana, anchor = "nw",tags="banana")
+    canvas.create_image(1440,640,image = banana, anchor = "nw",tags="banana")
+    canvas.create_image(1470, 640,image = banana, anchor = "nw",tags="banana")
+    canvas.create_image(1500, 640,image = banana, anchor = "nw",tags="banana")
 
     canvas.create_image(1440,640,image = banana, anchor = "nw",tags="banana")
     canvas.create_image(1470, 640,image = banana, anchor = "nw",tags="banana")
     canvas.create_image(1500, 640,image = banana, anchor = "nw",tags="banana")
 
-    canvas.create_image(1760,700,image = banana, anchor = "nw",tags="banana")
-    canvas.create_image(1790, 700,image = banana, anchor = "nw",tags="banana")
-    canvas.create_image(1820, 700,image = banana, anchor = "nw",tags="banana")
+    canvas.create_image(1760,640,image = banana, anchor = "nw",tags="banana")
+    canvas.create_image(1790, 640,image = banana, anchor = "nw",tags="banana")
+    canvas.create_image(1820, 640,image = banana, anchor = "nw",tags="banana")
 
     canvas.create_image(1760,640,image = banana, anchor = "nw",tags="banana")
     canvas.create_image(1790, 640,image = banana, anchor = "nw",tags="banana")
@@ -249,16 +256,18 @@ def level1(event):
     canvas.create_image(1000, 480,image = stone1, anchor = "nw",tags="PLATFORM")
     canvas.create_image(1200, 300,image = stone1, anchor = "nw",tags="PLATFORM")
 
-    canvas.create_image(650, 650,image = enemy, anchor = "nw",tags="platform") 
-    canvas.create_image(1200, 650,image = enemy, anchor = "nw",tags="platform") 
-    canvas.create_image(1600, 650,image = enemy, anchor = "nw",tags="platform") 
+    canvas.create_image(650, 620,image = enemy, anchor = "nw",tags="platform") 
+    canvas.create_image(1200, 620,image = enemy, anchor = "nw",tags="platform") 
+    canvas.create_image(1600, 620,image = enemy, anchor = "nw",tags="platform") 
+
+    canvas.create_rectangle(0,780,3800,800,fill="black",tags="PLATFORM")
+    
+    
     player_file = Image.open("IMAGES/player.png")
     player_size = player_file.resize((10, 10))
     player = ImageTk.PhotoImage(player_size)
-    player_id=canvas.create_image(50,0,image=player)
-    # char_file = Image.open("IMAGES/player.png")
-    # char_size = char_file.resize((10,10))
-    # char = ImageTk.PhotoImage(char_size)
+    player_id=canvas.create_image(100,0,image=player)
+
     #_____________APSARA WIN PLACE_________________
     canvas.create_image(1880, 570,image = apsora, anchor = "nw",tags="PLATFORM") 
     canvas.create_image(10,10,image=levelsremove,anchor="nw",tags="remove")
@@ -267,25 +276,27 @@ def level1(event):
 #________________LEVEL-3__________________
 def level3(event):
     canvas.delete("all")
-    # global player_id
+    global player_id
     global bg_l1_label1,bg_l1_label2
+    
     bg_l1_label1=canvas.create_image(0,0,image=level_3,anchor="nw")
     bg_l1_label2=canvas.create_image(WINDOW_WIDTH,0,image=level_3,anchor="nw")
     #_____________ground__________________
-    canvas.create_image(0,650,image=grass_level3,anchor="nw",tags="PLATFORM")
-    canvas.create_image(290,650,image=grass_level3,anchor="nw",tags="PLATFORM")
-    canvas.create_image(580,650,image=grass_level3,anchor="nw",tags="PLATFORM")
-    canvas.create_image(870,650,image=grass_level3,anchor="nw",tags="PLATFORM")
-    canvas.create_image(1070,650,image=grass_level3,anchor="nw",tags="PLATFORM")
-    canvas.create_image(1270,650,image=grass_level3,anchor="nw",tags="PLATFORM")
-    canvas.create_image(1470,650,image=grass_level3,anchor="nw",tags="PLATFORM")
+    canvas.create_image(0,590,image=grass_level3,anchor="nw",tags="PLATFORM")
+    canvas.create_image(290,590,image=grass_level3,anchor="nw",tags="PLATFORM")
+    canvas.create_image(580,590,image=grass_level3,anchor="nw",tags="PLATFORM")
+    canvas.create_image(870,590,image=grass_level3,anchor="nw",tags="PLATFORM")
+    canvas.create_image(1070,590,image=grass_level3,anchor="nw",tags="PLATFORM")
+    canvas.create_image(1270,590,image=grass_level3,anchor="nw",tags="PLATFORM")
+    canvas.create_image(1470,590,image=grass_level3,anchor="nw",tags="PLATFORM")
+    canvas.create_image(1760,590,image=grass_level3,anchor="nw",tags="PLATFORM")
     #____________Stone______________-
-    canvas.create_image(130,490,image=stone,anchor="nw",tags="stone")
-    canvas.create_image(420,300,image=stone,anchor="nw",tags="stone")
-    canvas.create_image(940,500,image=stone,anchor="nw",tags="stone")
-    canvas.create_image(740,200,image=small_stone,anchor="nw",tags="stone")
-    canvas.create_image(840,400,image=small_stone,anchor="nw",tags="stone")
-    canvas.create_image(1250,350,image=small_stone,anchor="nw",tags="stone")
+    canvas.create_image(130,490,image=stone,anchor="nw",tags="PLATFORM")
+    canvas.create_image(420,300,image=stone,anchor="nw",tags="PLATFORM")
+    canvas.create_image(940,500,image=stone,anchor="nw",tags="PLATFORM")
+    canvas.create_image(740,200,image=small_stone,anchor="nw",tags="PLATFORM")
+    canvas.create_image(840,400,image=small_stone,anchor="nw",tags="PLATFORM")
+    canvas.create_image(1250,350,image=small_stone,anchor="nw",tags="PLATFORM")
     #______________Tiger__________________
     canvas.create_image(320,430,image=tiger,anchor="nw",tags="tiger")
     #______________Thorns____________________
@@ -294,9 +305,14 @@ def level3(event):
     canvas.create_image(700,280,image=thorn,anchor="nw",tags="thorn")
     canvas.create_image(780,170,image=thorn,anchor="nw",tags="thorn")
     canvas.create_image(1000,480,image=thorn,anchor="nw",tags="thorn")
+    player_file = Image.open("IMAGES/player.png")
+    player_size = player_file.resize((10, 10))
+    player = ImageTk.PhotoImage(player_size)
+    player_id=canvas.create_image(100,0,image=player)
     #___________BACK TO ALL LEVEL_____________
     canvas.create_image(10,10,image=levelsremove,anchor="nw",tags="remove")
     scroll_background()
+    gravity()
 # # ------------- Functions ---------------------
 def check_movement(dx=0, dy=0, checkGround=False):
     # global scroll_background
