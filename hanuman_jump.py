@@ -47,6 +47,92 @@ stone=ImageTk.PhotoImage(file="IMAGES/stone.png")
 small_stone=ImageTk.PhotoImage(file="IMAGES/small_stone.png")
 thorn=ImageTk.PhotoImage(file="IMAGES/thorns.png")
 levelsremove=ImageTk.PhotoImage(file="IMAGES/remove.png")
+player=ImageTk.PhotoImage(file="IMAGES/player.png")
+
+wall1_game = ImageTk.PhotoImage(file="IMAGES/wall1.png")
+wall2_game = ImageTk.PhotoImage(file="IMAGES/wall2.png")
+wall3_game = ImageTk.PhotoImage(file="IMAGES/wall3.png")
+kill_game = ImageTk.PhotoImage(file="IMAGES/kill1.png")
+kill1_game = ImageTk.PhotoImage(file="IMAGES/kill2.png")
+god_game =ImageTk.PhotoImage(file ="IMAGES/god.png")
+winer1_game =ImageTk.PhotoImage(file ="IMAGES/winer1.png")
+winer2_game =ImageTk.PhotoImage(file ="IMAGES/player.png")
+winer3_game =ImageTk.PhotoImage(file ="IMAGES/snake.png")
+banana_game =ImageTk.PhotoImage(file ="IMAGES/banana.png")
+banana1_game =ImageTk.PhotoImage(file ="IMAGES/banana1.png")
+dragon_game =ImageTk.PhotoImage(file ="IMAGES/dragon.png")
+#======win place=====
+winer_file=Image.open("IMAGES/winer.png")
+winer_file_size=winer_file.resize((50,100))
+win_game =ImageTk.PhotoImage(winer_file_size)
+#=========BACKGROUND MENU=========
+bg_game_file=Image.open("IMAGES/bg_game.jpg")
+bg_game_file_size=bg_game_file.resize((WINDOW_WIDTH,WINDOW_HEIGHT))
+bg_game=ImageTk.PhotoImage(bg_game_file_size)
+#=======STONE LEVEL3==========
+stone_file=Image.open("IMAGES/stone.png")
+stone_file_size=stone_file.resize((100,30))
+stone_game =ImageTk.PhotoImage(stone_file_size)
+#===============BG-LEVEL-2=============
+l2=Image.open("IMAGES/bg_game.jpg")
+l2_size=l2.resize((WINDOW_WIDTH,WINDOW_HEIGHT))
+bg_l2=ImageTk.PhotoImage(l2_size)
+
+l3=Image.open("IMAGES/wall1.png")
+l3_size = l3.resize((200,110))
+bg_l3 = ImageTk.PhotoImage(l3_size)
+
+l4=Image.open("IMAGES/wall2.png")
+l4_size = l4.resize((220,100))
+bg_l4 = ImageTk.PhotoImage(l4_size)
+
+l5=Image.open("IMAGES/wall3.png")
+l5_size = l5.resize((250,100))
+bg_l5 = ImageTk.PhotoImage(l5_size)
+
+l6=Image.open("IMAGES/kill1.png")
+l6_size = l6.resize((100,60))
+bg_l6 = ImageTk.PhotoImage(l6_size)
+
+l7=Image.open("IMAGES/kill2.png")
+l7_size = l7.resize((180,100))
+bg_l7 = ImageTk.PhotoImage(l7_size)
+
+l8=Image.open("IMAGES/stone.png")
+l8_size = l8.resize((370,60))
+bg_l8 = ImageTk.PhotoImage(l8_size)
+
+l9=Image.open("IMAGES/winer.png")
+l9_size = l9.resize((250,300))
+bg_l9 = ImageTk.PhotoImage(l9_size)
+
+l10=Image.open("IMAGES/god.png")
+l10_size = l10.resize((100,80))
+bg_l10 = ImageTk.PhotoImage(l10_size)
+
+l11=Image.open("IMAGES/winer1.png")
+l11_size = l11.resize((90,70))
+bg_l11 = ImageTk.PhotoImage(l11_size)
+
+l12=Image.open("IMAGES/player.png")
+l12_size = l12.resize((90,70))
+bg_l12 = ImageTk.PhotoImage(l12_size)
+
+l13=Image.open("IMAGES/snake.png")
+l13_size = l13.resize((100,80))
+bg_l13 = ImageTk.PhotoImage(l13_size)
+
+l14=Image.open("IMAGES/banana-tree.png")
+l14_size = l14.resize((190,130))
+bg_l14 = ImageTk.PhotoImage(l14_size)
+
+l15=Image.open("IMAGES/banana1.png")
+l15_size = l15.resize((60,30))
+bg_l15 = ImageTk.PhotoImage(l15_size)
+
+l16=Image.open("IMAGES/dragon.png")
+l16_size = l16.resize((150,90))
+bg_l16 = ImageTk.PhotoImage(l16_size)
 # _____________________Bird_____________________________
 bird1_file = Image.open("IMAGES/bird1.gif")
 bird1_size = bird1_file.resize((150, 100))
@@ -272,7 +358,108 @@ def level1(event):
     canvas.create_image(1880, 570,image = apsora, anchor = "nw",tags="PLATFORM") 
     canvas.create_image(10,10,image=levelsremove,anchor="nw",tags="remove")
     scroll_background()
-    gravity()
+    # gravity()
+#__________LEVEL-2___________
+def level2(event):
+    canvas.delete("all")
+    global player_id
+    global bg_l1_label1,bg_l1_label2
+    bg_l1_label1=canvas.create_image(1,0,image = bg_l2, anchor = "nw")
+    bg_l1_label2=canvas.create_image(WINDOW_WIDTH,0,image = bg_l2, anchor = "nw")
+    canvas.create_image(300,350, image= bg_l3, anchor = "nw",tags="PLATFORM")
+    canvas.create_image(150,440, image= bg_l3, anchor = "nw",tags="PLATFORM")
+    canvas.create_image(370,320, image= bg_l6, anchor = "nw",tags="PLATFORM")
+    canvas.create_image(700,400, image= bg_l4, anchor = "nw",tags="PLATFORM")
+    canvas.create_image(800,400, image= bg_l4, anchor = "nw",tags="PLATFORM")
+    canvas.create_image(970,520, image= bg_l5, anchor = "nw",tags="PLATFORM")
+    canvas.create_image(400,500, image= bg_l4, anchor = "nw",tags="PLATFORM")
+    canvas.create_image(460,250, image= bg_l5, anchor = "nw",tags="PLATFORM")
+    canvas.create_image(660,250, image= bg_l5, anchor = "nw",tags="PLATFORM")
+    canvas.create_image(1040,450, image= bg_l7, anchor = "nw",tags="PLATFORM")
+    canvas.create_image(480,190, image= bg_l10, anchor = "nw",tags="PLATFORM")
+
+    canvas.create_image(1700,400, image= bg_l4, anchor = "nw",tags="PLATFORM")
+    canvas.create_image(1600,500, image= bg_l4, anchor = "nw",tags="PLATFORM")
+    canvas.create_image(1500,600, image= bg_l4, anchor = "nw",tags="PLATFORM")
+    canvas.create_image(1330,410, image= bg_l4, anchor = "nw",tags="PLATFORM")
+    
+
+    canvas.create_image(1100,300, image= bg_l5, anchor = "nw",tags="PLATFORM")
+
+
+    canvas.create_image(600,220, image= bg_l15, anchor = "nw",tags="PLATFORM")
+    canvas.create_image(640,220, image= bg_l15, anchor = "nw",tags="PLATFORM")
+    canvas.create_image(660,220, image= bg_l15, anchor = "nw",tags="PLATFORM")
+    canvas.create_image(690,220, image= bg_l15, anchor = "nw",tags="PLATFORM")
+
+    canvas.create_image(180,410, image= bg_l15, anchor = "nw",tags="PLATFORM")
+    canvas.create_image(220,410, image= bg_l15, anchor = "nw",tags="PLATFORM")
+    canvas.create_image(260,410, image= bg_l15, anchor = "nw",tags="PLATFORM")
+    canvas.create_image(270,410, image= bg_l15, anchor = "nw",tags="PLATFORM")
+
+    canvas.create_image(410,470, image= bg_l15, anchor = "nw",tags="PLATFORM")
+    canvas.create_image(450,470, image= bg_l15, anchor = "nw",tags="PLATFORM")
+    canvas.create_image(480,470, image= bg_l15, anchor = "nw",tags="PLATFORM")
+    canvas.create_image(500,470, image= bg_l15, anchor = "nw",tags="PLATFORM")
+
+    canvas.create_image(720,370, image= bg_l15, anchor = "nw",tags="PLATFORM")
+    canvas.create_image(760,370, image= bg_l15, anchor = "nw",tags="PLATFORM")
+    canvas.create_image(790,370, image= bg_l15, anchor = "nw",tags="PLATFORM")
+    canvas.create_image(810,370, image= bg_l15, anchor = "nw",tags="PLATFORM")
+
+    canvas.create_image(1150,280, image= bg_l15, anchor = "nw",tags="PLATFORM")
+    canvas.create_image(1200,280, image= bg_l15, anchor = "nw",tags="PLATFORM")
+    canvas.create_image(1240,280, image= bg_l15, anchor = "nw",tags="PLATFORM")
+    canvas.create_image(1290,280, image= bg_l15, anchor = "nw",tags="PLATFORM")
+
+    canvas.create_image(1350,380, image= bg_l15, anchor = "nw",tags="PLATFORM")
+    canvas.create_image(1400,380, image= bg_l15, anchor = "nw",tags="PLATFORM")
+    canvas.create_image(1440,380, image= bg_l15, anchor = "nw",tags="PLATFORM")
+    canvas.create_image(1490,380, image= bg_l15, anchor = "nw",tags="PLATFORM")
+
+    
+
+# __________grass_______________________________________
+
+    canvas.create_image(0,694, image= bg_l8, anchor = "nw",tags="PLATFORM")
+    canvas.create_image(100,694, image= bg_l8, anchor = "nw",tags="PLATFORM")
+    canvas.create_image(200,694, image= bg_l8, anchor = "nw",tags="PLATFORM")
+    canvas.create_image(300,694, image= bg_l8, anchor = "nw",tags="PLATFORM")
+    canvas.create_image(400,694, image= bg_l8, anchor = "nw",tags="PLATFORM")
+    canvas.create_image(700,694, image= bg_l8, anchor = "nw",tags="PLATFORM")
+    canvas.create_image(800,694, image= bg_l8, anchor = "nw",tags="PLATFORM")
+    canvas.create_image(900,694, image= bg_l8, anchor = "nw",tags="PLATFORM")
+    canvas.create_image(1000,694, image= bg_l8, anchor = "nw",tags="PLATFORM")
+    canvas.create_image(1050,694, image= bg_l8, anchor = "nw",tags="PLATFORM")
+    canvas.create_image(1050,694, image= bg_l8, anchor = "nw",tags="PLATFORM")
+    canvas.create_image(1000,694, image= bg_l8, anchor = "nw",tags="PLATFORM")
+    canvas.create_image(1000,694, image= bg_l8, anchor = "nw",tags="PLATFORM")
+    canvas.create_image(1070,694, image= bg_l8, anchor = "nw",tags="PLATFORM")
+    canvas.create_image(1370,694, image= bg_l8, anchor = "nw",tags="PLATFORM")
+    canvas.create_image(1670,694, image= bg_l8, anchor = "nw",tags="PLATFORM")
+    canvas.create_image(1970,694, image= bg_l8, anchor = "nw",tags="PLATFORM")
+    canvas.create_image(1970,694, image= bg_l8, anchor = "nw",tags="PLATFORM")
+    canvas.create_image(370,694, image= bg_l8, anchor = "nw",tags="PLATFORM")
+    
+    
+
+    canvas.create_image(0,640, image= bg_l12, anchor = "nw",tags="PLATFORM")
+    canvas.create_image(600,630, image= bg_l13, anchor = "nw",tags="PLATFORM")
+    canvas.create_image(400,630, image= bg_l13, anchor = "nw",tags="PLATFORM")
+    canvas.create_image(900,630, image= bg_l13, anchor = "nw",tags="PLATFORM")
+    canvas.create_image(1000,630, image= bg_l13, anchor = "nw",tags="PLATFORM")
+    canvas.create_image(800,630, image= bg_l13, anchor = "nw",tags="PLATFORM")
+    canvas.create_image(750,155, image= bg_l14, anchor = "nw",tags="PLATFORM")
+
+    canvas.create_image(830,350, image= bg_l16, anchor = "nw",tags="PLATFORM")
+
+# ====================win place++++++++++++
+
+    canvas.create_image(1740,130, image= bg_l9, anchor = "nw",tags="PLATFORM")
+    canvas.create_image(1820,280, image= bg_l11, anchor = "nw",tags="PLATFORM")
+    #___________BACK TO ALL LEVEL_____________
+    canvas.create_image(10,10,image=levelsremove,anchor="nw",tags="remove")
+    scroll_background()
 #________________LEVEL-3__________________
 def level3(event):
     canvas.delete("all")
@@ -297,6 +484,21 @@ def level3(event):
     canvas.create_image(740,200,image=small_stone,anchor="nw",tags="PLATFORM")
     canvas.create_image(840,400,image=small_stone,anchor="nw",tags="PLATFORM")
     canvas.create_image(1250,350,image=small_stone,anchor="nw",tags="PLATFORM")
+    canvas.create_image(0,650,image=grass_level3,anchor="nw",tags="PLATFORM")
+    canvas.create_image(290,650,image=grass_level3,anchor="nw",tags="PLATFORM")
+    canvas.create_image(580,650,image=grass_level3,anchor="nw",tags="PLATFORM")
+    canvas.create_image(870,650,image=grass_level3,anchor="nw",tags="PLATFORM")
+    canvas.create_image(1160,650,image=grass_level3,anchor="nw",tags="PLATFORM")
+    canvas.create_image(1450,650,image=grass_level3,anchor="nw",tags="PLATFORM")
+    canvas.create_image(1740,650,image=grass_level3,anchor="nw",tags="PLATFORM")
+ 
+    #____________Stone______________-
+    canvas.create_image(130,490,image=stone,anchor="nw",tags="stone")
+    canvas.create_image(420,300,image=stone,anchor="nw",tags="stone")
+    canvas.create_image(940,500,image=stone,anchor="nw",tags="stone")
+    canvas.create_image(740,200,image=small_stone,anchor="nw",tags="stone")
+    canvas.create_image(840,400,image=small_stone,anchor="nw",tags="stone")
+    canvas.create_image(1450,350,image=small_stone,anchor="nw",tags="stone")
     #______________Tiger__________________
     canvas.create_image(320,430,image=tiger,anchor="nw",tags="tiger")
     #______________Thorns____________________
@@ -315,81 +517,55 @@ def level3(event):
     gravity()
 # # ------------- Functions ---------------------
 def check_movement(dx=0, dy=0, checkGround=False):
-    # global scroll_background
     coord = canvas.coords(player_id)
     platforms = canvas.find_withtag("PLATFORM")
-    if coord[0] + dx -15 < 0 or coord[0]+player.width() + dx > WINDOW_WIDTH:
+    if coord[0] + dx < 0 or coord[0]+player.width() + dx > WINDOW_WIDTH:
         return False
     if checkGround:
-        overlap = canvas.find_overlapping(coord[0]+player.width(), coord[1], coord[0] + dx+ 50 , coord[1]+ dy + 15)
+        overlap = canvas.find_overlapping(coord[0]+player.width(), coord[1], coord[0]+ player.width() , coord[1]+player.height() + dy)
     else:
-        overlap = canvas.find_overlapping(coord[0]+dx, coord[1]+dy, coord[0] - player.width(), coord[1] - player.height())
-    print(overlap)
+        overlap = canvas.find_overlapping(coord[0]+dx, coord[1]+dy, coord[0]+dx, coord[1]+ player.width())
     for platform in platforms:
         if platform in overlap:
             return False
     return True
 
-def jump(force):
-    if force > 0:
-        if check_movement(0, -force):
-            canvas.move(player_id, 0, -force)
-            window.after(TIMED_LOOP, jump, force-1)
-
-def start_move(event):
-    if event.keysym not in keyPressed:
-        keyPressed.append(event.keysym)
-        if len(keyPressed) == 1:
-            move()
-def eat_banana():
-    coord = canvas.coords(player_id)
-    bananas = canvas.find_withtag("banana")
-    overlap = canvas.find_overlapping(coord[0], coord[1], coord[0] + player.width(),coord[1] + player.height())
-    for bn in bananas:
-        if bn in overlap:
-            return bn
-    return 0
-
-def playSound():
-    mixer.init() #Initialzing pyamge mixer
-    mixer.music.load('SOUND/sound.mp3') #Loading Music File
-    mixer.music.play() #Playing Music with Pygame
-    time.sleep(0.2)
-    mixer.music.stop()
-
-
-
 def move():
+    global score
     if not keyPressed == []:
         x = 0
         if "Left" in keyPressed:
-            canvas.itemconfigure(player_id,image=player)
             x -= SPEED
         if "Right" in keyPressed:
-            canvas.itemconfigure(player_id,image=player)
             x += SPEED
         if "space" in keyPressed and not check_movement(0, GRAVITY_FORCE, True):
             jump(JUMP_FORCE)
         if check_movement(x):
             canvas.move(player_id, x, 0)
         window.after(TIMED_LOOP, move)
-
-    banana_id = eat_banana()
-    if banana_id > 0:
-        coord = canvas.coords(banana_id)
-        canvas.delete(banana_id)
-        playSound()
-
+# ==============>MOVE-BALL <================== 
+#____JUMP THE PLAYER____________
+def jump(force):
+    if force > 0:
+        if check_movement(0, -force):
+            canvas.move(player, 0, -force)
+            window.after(TIMED_LOOP, jump, force-1)
+# ==============>GRAVITY <==================        
 def gravity():
-    if check_movement(0, GRAVITY_FORCE, False):
+    if check_movement(0, GRAVITY_FORCE, True):
         canvas.move(player_id, 0, GRAVITY_FORCE)
     window.after(TIMED_LOOP, gravity)
-
-def stop_move(event):                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+#_______START MOVE THE CHARACTER______
+def start_move(event):
+    if event.keysym not in keyPressed:
+        keyPressed.append(event.keysym)
+        if len(keyPressed) == 1:
+            move()
+def stop_move(event):
     global keyPressed
     if event.keysym in keyPressed:
         keyPressed.remove(event.keysym)
-
+gravity()
 window.bind("<Key>", start_move)
 window.bind("<KeyRelease>", stop_move)
 #__________________KEY EVENTS______________________
@@ -399,9 +575,10 @@ canvas.tag_bind("help","<Button-1>", help)
 canvas.tag_bind("back","<Button-1>", backlevel)
 canvas.tag_bind("level3","<Button-1>",level3)
 canvas.tag_bind("level1","<Button-1>",level1)
+canvas.tag_bind("level2","<Button-1>",level2)
 canvas.tag_bind("remove","<Button-1>",remove)
 home()
-#========================= DISPLAY WINDOW =================
+# #========================= DISPLAY WINDOW =================
 canvas.pack(expand=True, fill="both")
 frame.pack(expand=True, fill="both")
 window.mainloop()
