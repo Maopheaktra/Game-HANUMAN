@@ -255,7 +255,7 @@ def level1(event):
     player_file = Image.open("IMAGES/player.png")
     player_size = player_file.resize((10, 10))
     player = ImageTk.PhotoImage(player_size)
-    player_id=canvas.create_image(200,0,image=player)
+    player_id=canvas.create_image(50,0,image=player)
     # char_file = Image.open("IMAGES/player.png")
     # char_size = char_file.resize((10,10))
     # char = ImageTk.PhotoImage(char_size)
@@ -305,9 +305,9 @@ def check_movement(dx=0, dy=0, checkGround=False):
     if coord[0] + dx -15 < 0 or coord[0]+player.width() + dx > WINDOW_WIDTH:
         return False
     if checkGround:
-        overlap = canvas.find_overlapping(coord[0]+player_id.width(), coord[1], coord[0] + dx+ 50 , coord[1]+ dy + 15)
+        overlap = canvas.find_overlapping(coord[0]+player.width(), coord[1], coord[0] + dx+ 50 , coord[1]+ dy + 15)
     else:
-        overlap = canvas.find_overlapping(coord[0]+dx, coord[1]+dy, coord[0] - player.width(), coord[1] - player_id.height())
+        overlap = canvas.find_overlapping(coord[0]+dx, coord[1]+dy, coord[0] - player.width(), coord[1] - player.height())
     print(overlap)
     for platform in platforms:
         if platform in overlap:
@@ -328,7 +328,7 @@ def start_move(event):
 def eat_banana():
     coord = canvas.coords(player_id)
     bananas = canvas.find_withtag("banana")
-    overlap = canvas.find_overlapping(coord[0], coord[1], coord[0] + player_id.width(),coord[1] + player_id.height())
+    overlap = canvas.find_overlapping(coord[0], coord[1], coord[0] + player.width(),coord[1] + player.height())
     for bn in bananas:
         if bn in overlap:
             return bn
