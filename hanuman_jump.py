@@ -276,16 +276,18 @@ def level3(event):
     canvas.create_image(290,650,image=grass_level3,anchor="nw",tags="PLATFORM")
     canvas.create_image(580,650,image=grass_level3,anchor="nw",tags="PLATFORM")
     canvas.create_image(870,650,image=grass_level3,anchor="nw",tags="PLATFORM")
-    canvas.create_image(1070,650,image=grass_level3,anchor="nw",tags="PLATFORM")
-    canvas.create_image(1270,650,image=grass_level3,anchor="nw",tags="PLATFORM")
-    canvas.create_image(1470,650,image=grass_level3,anchor="nw",tags="PLATFORM")
+    canvas.create_image(1160,650,image=grass_level3,anchor="nw",tags="PLATFORM")
+    canvas.create_image(1450,650,image=grass_level3,anchor="nw",tags="PLATFORM")
+    canvas.create_image(1740,650,image=grass_level3,anchor="nw",tags="PLATFORM")
+    # canvas.create_image(1470,650,image=grass_level3,anchor="nw",tags="PLATFORM")
+    # canvas.create_image(1670,650,image=grass_level3,anchor="nw",tags="PLATFORM")
     #____________Stone______________-
     canvas.create_image(130,490,image=stone,anchor="nw",tags="stone")
     canvas.create_image(420,300,image=stone,anchor="nw",tags="stone")
     canvas.create_image(940,500,image=stone,anchor="nw",tags="stone")
     canvas.create_image(740,200,image=small_stone,anchor="nw",tags="stone")
     canvas.create_image(840,400,image=small_stone,anchor="nw",tags="stone")
-    canvas.create_image(1250,350,image=small_stone,anchor="nw",tags="stone")
+    canvas.create_image(1450,350,image=small_stone,anchor="nw",tags="stone")
     #______________Tiger__________________
     canvas.create_image(320,430,image=tiger,anchor="nw",tags="tiger")
     #______________Thorns____________________
