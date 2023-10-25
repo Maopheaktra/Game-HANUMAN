@@ -211,7 +211,7 @@ def level_2():
     canvas.create_image(900,630, image= bg_l13, anchor = "nw",tags="PLATFORM")
     canvas.create_image(1000,630, image= bg_l13, anchor = "nw",tags="PLATFORM")
     canvas.create_image(800,630, image= bg_l13, anchor = "nw",tags="PLATFORM")
-    canvas.create_image(750,150, image= bg_l14, anchor = "nw",tags="PLATFORM")
+    canvas.create_image(750,155, image= bg_l14, anchor = "nw",tags="PLATFORM")
 
     canvas.create_image(830,350, image= bg_l16, anchor = "nw",tags="PLATFORM")
 
